@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import nltk
 from nltk.corpus import stopwords
 from numpy import array
 from tensorflow.keras.preprocessing.text import one_hot, Tokenizer
@@ -10,6 +11,10 @@ from tensorflow.keras.models import Sequential
 from sklearn.model_selection import train_test_split
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+
+import nltk
+nltk.download('stopwords')
+
 
 #loading the model 
 
