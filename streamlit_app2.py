@@ -90,7 +90,7 @@ with tab1:
     
         st.subheader(emotion_dict[prediction.argmax()])
     
-    with tab2:
+with tab2:
         st.subheader("About App")
         st.write("The app is designed to help to understand the machine of the emotion expressed in the review of a product or text input of the user")
         st.write("The text input need not be a product review but since, the model is trained on the product review data, it works more accurate with the same kind of information")
@@ -107,7 +107,7 @@ with tab1:
         st.write("Press the 'Predict' button to see the prediction.")
         st.write("Predition can be Positive, Negative or Neutral")
     
-    with tab3:    
+with tab3:    
         import pandas as pd
         
         history = pd.read_csv('history.csv')
