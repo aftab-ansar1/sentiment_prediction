@@ -46,7 +46,7 @@ def preprocess_text(text):
 #header
 st.header('Product Review Emmotion Predictor')
 #input box
-tab1, tab2 = st.tabs(["App", "About"])
+tab1, tab2, tab3 = st.tabs(["App", "About", "History"])
 with tab1:
     input_text = st.text_input('Enter Text', 'Enter your review and press predict button')
     
@@ -106,24 +106,21 @@ with tab1:
         st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to verify your review.") 
         st.write("Press the 'Predict' button to see the prediction.")
         st.write("Predition can be Positive, Negative or Neutral")
+    
+    with tab3:    
+        import pandas as pd
         
-    # import pandas as pd
-    
-    # history_df = pd.read_csv('history_df1.csv')
-    # history_dict = {'text': input_text,
-    #                     # 'Model0 Pred': pred1,
-    #                     # 'Model1 Pred': pred2,
-    #                     # 'Model2 Pred': pred3,
-    #                     'Model3 Pred': pred4,
-                        
-    #                     }
-    # history_dict_df = pd.DataFrame([history_dict])
-    # # history_dict_df
-    
-    # run_history = pd.concat([history_df, history_dict_df], axis = 0)
-    # run_history.to_csv('history_df1.csv', index = False)
-    
-    # st.dataframe(run_history)
+        history = pd.read_csv('history.csv')
+        history_dict = {'Text': input_text,
+                        'Prediction': prediction
+                        }
+        history_dict_df = pd.DataFrame([history_dict])
+        # history_dict_df
+        
+        run_history = pd.concat([history, history_dict_df], axis = 0)
+        run_history.to_csv('history.csv', index = False)
+        
+        st.dataframe(run_history)
 
 
 
