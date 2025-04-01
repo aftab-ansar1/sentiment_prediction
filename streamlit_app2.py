@@ -46,7 +46,7 @@ def preprocess_text(text):
 #header
 st.header('Product Review Emmotion Predictor')
 #input box
-tab1, tab2, tab3 = st.tabs(["App", "About", "History"])
+tab1, tab2, tab3 = st.tabs(["About", "App", "History"])
 with tab2:
     input_text = st.text_input('Enter Text', 'Enter your review and press predict button')
     
