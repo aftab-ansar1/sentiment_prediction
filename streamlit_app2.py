@@ -112,7 +112,7 @@ with tab3:
         
         history = pd.read_csv('history.csv')
         history_dict = {'Text': input_text,
-                        'Prediction': prediction
+                        'Prediction': prediction.argmax()
                         }
         history_dict_df = pd.DataFrame([history_dict])
         # history_dict_df
