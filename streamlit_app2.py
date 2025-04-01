@@ -46,49 +46,61 @@ def preprocess_text(text):
 #header
 st.header('Product Review Emmotion Predictor')
 #input box
-input_text = st.text_input('Enter Text', 'Enter your review and press predict button')
-
-#preprocessing input text
-processed_text = preprocess_text(input_text)
-
-#converting input text into list to pass to the tokanizer. naming it input tokens
-input_tokens = []
-input_tokens.append(processed_text)
-
-
-#app page output components
-st.divider()
-st.write('Your Review:')
-st.caption(input_text)
-st.divider()
-
-#loading wordtokanizer pickle file
-#word tokanizer will convert processed text into vectors
-with open ('my_keras_tokens1.pkl','rb') as handle:
-    word_tokanizer = pickle.load(handle)
-
-#tokanizing the input_tokens    
-input_tokens = word_tokanizer.texts_to_sequences(input_tokens)
-
-#limiting the tokens to 100 using padding.
-# padding will use the 0 to pad the tokens having less than 100 sequences after the last sequence
-input_tokens = pad_sequences(input_tokens, padding='post', maxlen=100)
-
-#app element
-#predict button to process the input
-predict_button = st.button('Predict')
-
-#Predicting the emotion on scale of 0 to 1
-# 0: negative, 1: Positive
-emotion_dict = {0: 'Negative',
-                1: 'Neutral',
-                2: 'Positive'}
-if predict_button:
-    prediction = my_model1.predict(input_tokens)
-
-    st.subheader(emotion_dict[prediction.argmax()])
+tab1, tab2 = st.tabs(["App", "About"])
+with tab1:
+    input_text = st.text_input('Enter Text', 'Enter your review and press predict button')
+    
+    #preprocessing input text
+    processed_text = preprocess_text(input_text)
+    
+    #converting input text into list to pass to the tokanizer. naming it input tokens
+    input_tokens = []
+    input_tokens.append(processed_text)
     
     
+    #app page output components
+    st.divider()
+    st.write('Your Review:')
+    st.caption(input_text)
+    st.divider()
+    
+    #loading wordtokanizer pickle file
+    #word tokanizer will convert processed text into vectors
+    with open ('my_keras_tokens1.pkl','rb') as handle:
+        word_tokanizer = pickle.load(handle)
+    
+    #tokanizing the input_tokens    
+    input_tokens = word_tokanizer.texts_to_sequences(input_tokens)
+    
+    #limiting the tokens to 100 using padding.
+    # padding will use the 0 to pad the tokens having less than 100 sequences after the last sequence
+    input_tokens = pad_sequences(input_tokens, padding='post', maxlen=100)
+    
+    #app element
+    #predict button to process the input
+    predict_button = st.button('Predict')
+    
+    #Predicting the emotion on scale of 0 to 1
+    # 0: negative, 1: Positive
+    emotion_dict = {0: 'Negative',
+                    1: 'Neutral',
+                    2: 'Positive'}
+    if predict_button:
+        prediction = my_model1.predict(input_tokens)
+    
+        st.subheader(emotion_dict[prediction.argmax()])
+    
+    with tab2:
+        st.subheader("About App")
+        st.write("The app is designed to help to understand the machine of the emotion expressed in the review of a product or text input of the user")
+        st.write("The text input need not be a product review but since, the model is trained on the product review data, it works more accurate with the same kind of information")
+        st.write("The model interprets the emotions as Positive, Negative and Neutral.")
+
+        st.write("The emotions interpreted by the model need not to be accurate due to the limitation of the training data and machine learning capability.")
+        st.write("The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/enteties.")
+
+        st.write("User descrition is expected while using this app.")
+        
     # import pandas as pd
     
     # history_df = pd.read_csv('history_df1.csv')
