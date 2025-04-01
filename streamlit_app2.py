@@ -103,10 +103,9 @@ with tab1:
 
         st.divider()
         st.subheader("How to Use")
-        st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to
-                 verify your review. 
-                 Press the 'Predict' button to see the prediction.
-                 Predition can be Positive, Negative or Neutral")
+        st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to verify your review.") 
+        st.write("Press the 'Predict' button to see the prediction.")
+        st.write("Predition can be Positive, Negative or Neutral")
         
     # import pandas as pd
     
