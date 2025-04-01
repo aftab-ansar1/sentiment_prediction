@@ -100,6 +100,13 @@ with tab1:
         st.write("The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/enteties.")
 
         st.write("User descrition is expected while using this app.")
+
+        st.divider()
+        st.subheader("How to Use")
+        st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to
+                 verify your review. 
+                 Press the 'Predict' button to see the prediction.
+                 Predition can be Positive, Negative or Neutral")
         
     # import pandas as pd
     
