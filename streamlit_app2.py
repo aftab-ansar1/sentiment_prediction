@@ -117,11 +117,11 @@ with tab3:
                             }
             history_dict_df = pd.DataFrame([history_dict])
             # history_dict_df
+        
+            run_history = pd.concat([history, history_dict_df], axis = 0, ignore_index = True)
+            run_history.to_csv('history.csv', index = False)
         except Exception:
             pass
-        run_history = pd.concat([history, history_dict_df], axis = 0, ignore_index = True)
-        run_history.to_csv('history.csv', index = False)
-        
         st.dataframe(run_history)
 
 
