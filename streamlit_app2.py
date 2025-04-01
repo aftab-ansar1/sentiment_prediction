@@ -109,10 +109,10 @@ with tab2:
     
 with tab3:    
         import pandas as pd
-        
+        run_history = pd.DataFrame(columns = ['Text', 'Prediction'])
         history = pd.read_csv('history.csv')
         history_dict = {'Text': input_text,
-                        'Prediction': prediction.argmax()
+                        'Prediction': predict_label
                         }
         history_dict_df = pd.DataFrame([history_dict])
         # history_dict_df
