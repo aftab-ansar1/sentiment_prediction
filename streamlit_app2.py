@@ -47,7 +47,7 @@ def preprocess_text(text):
 st.header('Product Review Emmotion Predictor')
 #input box
 tab1, tab2, tab3 = st.tabs(["App", "About", "History"])
-with tab1:
+with tab2:
     input_text = st.text_input('Enter Text', 'Enter your review and press predict button')
     
     #preprocessing input text
@@ -90,7 +90,7 @@ with tab1:
         predict_label = emotion_dict[prediction.argmax()]
         st.subheader(predict_label)
     
-with tab2:
+with tab1:
         st.subheader("About App")
         st.write("The app is designed to help to understand the machine of the emotion expressed in the review of a product or text input of the user")
         st.write("The text input need not be a product review but since, the model is trained on the product review data, it works more accurate with the same kind of information")
@@ -103,9 +103,13 @@ with tab2:
 
         st.divider()
         st.subheader("How to Use")
+        st.subheader('App')
         st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to verify your review.") 
         st.write("Press the 'Predict' button to see the prediction.")
         st.write("Predition can be Positive, Negative or Neutral")
+        
+        st.subheader('History')
+        st.write('History page will store the text and prediction of the current session. You can see the history of yoyr prediction here')
     
 with tab3:    
         import pandas as pd
