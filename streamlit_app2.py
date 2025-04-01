@@ -126,7 +126,11 @@ with tab3:
             run_history.to_csv('history.csv', index = False)
         except Exception:
             pass
-        st.dataframe(run_history)
+        if run_history.empty:
+            st.subheader('Your Predictions will be Saved Here')
+            st.subheader('              :hourglass            ')
+        else:
+            st.dataframe(run_history)
 
 
 
