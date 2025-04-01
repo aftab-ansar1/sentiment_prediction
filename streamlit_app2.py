@@ -87,8 +87,8 @@ with tab1:
                     2: 'Positive'}
     if predict_button:
         prediction = my_model1.predict(input_tokens)
-    
-        st.subheader(emotion_dict[prediction.argmax()])
+        predict_label = emotion_dict[prediction.argmax()]
+        st.subheader(predict_label)
     
 with tab2:
         st.subheader("About App")
