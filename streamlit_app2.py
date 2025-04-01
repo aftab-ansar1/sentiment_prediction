@@ -128,7 +128,7 @@ with tab3:
             pass
         if run_history.empty:
             st.subheader('Your Predictions will be Saved Here')
-            st.subheader('              :hourglass            ')
+            st.subheader('              :hourglass:            ')
         else:
             st.dataframe(run_history)
 
