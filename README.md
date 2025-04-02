@@ -8,8 +8,8 @@ The model interprets the emotions as Positive, Negative and Neutral.
 
 The emotions interpreted by the model need not to be accurate due to the limitation of the training data and machine learning capability.
 
-The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/enteties.
+The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/entities.
 
 App is created using tensorflow sequential model with GloVe embedding.  
 
-User descrition is expected while using this app.  
+User descretion is expected while using this app.  
