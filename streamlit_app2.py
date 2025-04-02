@@ -97,19 +97,19 @@ with tab1:
         st.write("The model interprets the emotions as Positive, Negative and Neutral.")
 
         st.write("The emotions interpreted by the model need not to be accurate due to the limitation of the training data and machine learning capability.")
-        st.write("The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/enteties.")
+        st.write("The interpretations may be affected by the complexity of the sentences, tone, satire, irony, context or references to some historical or classical events/entities.")
 
-        st.write("User descrition is expected while using this app.")
+        st.write("User discretion is expected while using this app.")
 
         st.divider()
         st.subheader("How to Use")
         st.subheader('App')
         st.write("Enter your review to the text box and press enter. You can see your input below the text box. It is helpful when the text is long and help you to verify your review.") 
         st.write("Press the 'Predict' button to see the prediction.")
-        st.write("Predition can be Positive, Negative or Neutral")
+        st.write("Prediction can be Positive, Negative or Neutral")
         
         st.subheader('History')
-        st.write('History page will store the text and prediction of the current session. You can see the history of yoyr prediction here')
+        st.write('History page will store the text and prediction of the current session. You can see the history of your prediction on the page')
     
 with tab3:    
         import pandas as pd
